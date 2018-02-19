@@ -36,10 +36,11 @@ class User < ActiveRecord::Base
 
     unless user
       user = User.create(
-        name:     auth.info.nickname,
+        name:     auth.info.name,
         uid:      auth.uid,
         provider: auth.provider,
         email:    User.dummy_email(auth),
+        image:    auth.info.image,
         password: Devise.friendly_token[0, 20]
       )
       user.save!
