@@ -168,6 +168,7 @@ DEPENDENCIES
   omniauth-twitter
   paperclip (= 4.2.0)
   rails (= 4.0.5)
+  rake (= 12.3.0)
   sass-rails (= 4.0.3)
   sdoc (= 0.4.1)
   spring

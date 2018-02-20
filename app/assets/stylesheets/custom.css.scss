@@ -17,7 +17,11 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 100px;
+}
+
+header {
+  padding-top: 10px;
 }
 
 section {
@@ -145,6 +149,8 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  display: table-cell; /* IE8から使用可能 */
+  vertical-align: middle;
 }
 
 /* forms */

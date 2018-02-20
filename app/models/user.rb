@@ -40,7 +40,6 @@ class User < ActiveRecord::Base
         uid:      auth.uid,
         provider: auth.provider,
         email:    User.dummy_email(auth),
-        image:    auth.info.image,
         password: Devise.friendly_token[0, 20]
       )
       user.save!
