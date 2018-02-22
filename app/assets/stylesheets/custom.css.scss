@@ -1,5 +1,4 @@
 @import "bootstrap";
-
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -17,11 +16,11 @@ html {
 }
 
 body {
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 header {
-  padding-top: 10px;
+    margin: 0 auto;
 }
 
 section {
@@ -32,12 +31,30 @@ textarea {
   resize: vertical;
 }
 
-.center {
-  text-align: center;
+center {
+    text-align: center;
+}
+
+/*下揃え*/
+.nav.navbar-nav.navbar-right {
+  position : absolute ;
+  bottom : -5px ;
+  right : 180px;
+  font-size: 20px;/*文字のサイズ*/
+}
+
   h1 {
     margin-bottom: 10px;
   }
-}
+
+/* メインパネル */
+ div#main_panel {
+   padding: 46px 0 0 0; /* メインパネル上部に46ピクセルの余白を設定 */
+   height: 400px; /* メインパネルの高さを400pxに設定 */
+   background-image: url("home.png") no-repeat center center;
+   /* 背景を中央寄せで繰り返しなしで設定 */
+   background-size: cover; /* 背景画像をフルスクリーンで表示 */
+ }
 
 /* typography */
 
@@ -58,7 +75,6 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
 }
 
 p {
@@ -85,6 +101,16 @@ p {
   }
 }
 
+/*home*/
+
+.home_png{
+  display: block;
+  margin: 0 auto;
+  width:100%;
+  height:400px;
+}
+
+
 /* footer */
 
 footer {
@@ -110,6 +136,8 @@ footer {
     }
   }
 }
+
+
 
 /* miscellaneous */
 
@@ -149,8 +177,6 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
-  display: table-cell; /* IE8から使用可能 */
-  vertical-align: middle;
 }
 
 /* forms */
@@ -255,7 +281,7 @@ aside {
 }
 
 /* 押込み式ボタン */
-.square_btn{
+.btn1{
     display: inline-block;
     padding: 0.5em 1em;
     text-decoration: none;
@@ -264,10 +290,60 @@ aside {
     border-bottom: solid 4px #627295;
     border-radius: 3px;
 }
-.square_btn:active {/*ボタンを押したとき*/
+.btn1:active {/*ボタンを押したとき*/
     -ms-transform: translateY(4px);
     -webkit-transform: translateY(4px);
     transform: translateY(4px);/*下に動く*/
     border-bottom: none;/*線を消す*/
+}
+
+/*文字ボタン*/
+.btn2{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 37px;
+    color: #799dec;
+    text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #6182ca, 0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
+}
+.btn2:active {
+    top: 4px;
+	box-shadow: none;
+}
+
+/*Twitterボタン*/
+.fl_tw2{/*ボタンの背景*/
+  color: #ffffff;/*文字・アイコン色*/
+  border-radius: 7px;/*角丸に*/
+  display: inline-block;
+  height: 50px;/*高さ*/
+  width: 270px;/*幅*/
+  text-align: center;
+  font-size: 25px;/*文字のサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+  vertical-align: middle;/*垂直中央寄せ*/
+  background: #1da1f3;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+}
+
+.fl_tw2:hover{
+    color: #ffffff;/*文字・アイコン色*/
+  text-decoration:none;/*下線は消す*/
+}
+
+.fl_tw2 .fab-twitter {
+    text-shadow: 2px 2px 0px #4287d6;
+    font-size: 30px;
+}
+
+.fl_tw2 span {/*テキスト*/
+  display:inline-block;
+  transition: .5s
+  }
+
+.fl_tw2:hover span{/*ホバーで一周回転*/
+  -webkit-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  transform: rotateX(360deg);
 }
 

@@ -17,21 +17,18 @@
     </div>
   </div>
 <% else %>
-  <div class="center">
-    <%= image_tag 'home.png', :class =>'home_png'%>
-    
+  <div class="center jumbotron">
     <h1>Welcome to the Sample App</h1>
 
     <h2>
     This is the home page for the
-      
+      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
     sample application.
+    </h2>
 
-    <div class="center button">
-    <a href = "user_omniauth_authorize_path(:twitter)" class="fl_tw2">
-  <i class="fab fa-twitter"></i> <span> Twitterでログイン</span>
-    </a>
-    </div>
+    <%= link_to "Sign up now!", new_user_registration_path,
+                                class: "btn btn-lg btn-primary" %>
   </div>
+
   <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
 <% end %>

@@ -1,6 +1,8 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-      <%= link_to "MHWコミュニティ(仮)", root_path, id: "logo" %>
+    <ul class="nav navbar-nav navbar-left">
+　　　<%= link_to image_tag("logo.png", alt: "MHWコミュニティ"), root_path %>
+    </ul>
       <nav>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "ホーム",    root_path %></li>
