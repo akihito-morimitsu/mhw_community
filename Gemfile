@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.3.3'
 
 gem 'rake', '12.3.0'
 gem 'rails', '4.0.5'
@@ -35,4 +35,8 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+end
+
+group :production do
+  gem 'pg', '~> 0.20.0'
 end
