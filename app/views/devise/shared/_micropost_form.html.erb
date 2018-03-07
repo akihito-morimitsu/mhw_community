@@ -1,17 +1,17 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'devise/shared/error_messages', object: f.object %>
   <div class="form-group">
-   <%= f.label :title, "タイトル" %>
+   <%= f.label :タイトル %>
    <%= f.text_field :title,%>
   </div>
    
   <div class="form-group">
-   <%= f.label :comment, "本文" %>
+   <%= f.label :本文 %>
    <%= f.text_area :comment, placeholder: "コメントを書き込んでください" %>
   </div>
   
   <div class="form-group">
-   <%= f.label :category, "カテゴリー" %>
+   <%= f.label :カテゴリー %>
 　 <%= f.select :category, [["募集", "募集"], ["攻略", "攻略"], ["その他", "その他"]] %>
 　</div>
 
