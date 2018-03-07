@@ -5,7 +5,11 @@
    <input type="text" class="form-control" id="content">
   </div>
 
-
+<%= f.select :name, class: "form-control" %>
+<select id="page_name" name="page[name]">
+ <option value="rails_base">Railsの基礎</option> 
+ <option value="ruby_base">Rubyの基礎</option>
+</select>
 
   <div class="form-group">
    <label for="category">カテゴリー</label>
