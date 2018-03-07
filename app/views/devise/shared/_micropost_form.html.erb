@@ -1,11 +1,11 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'devise/shared/error_messages', object: f.object %>
   <div class="form-group">
-   <label for="content">タイトル</label>
-   <input type="text" class="form-control" id="content">
+   <label for="title">タイトル</label>
+   <input type="text" class="form-control" id="title">
   </div>
 
-<%= f.select :name, class: "form-control" %>
+<%= f.select :content, class: "form-control" %>
 <select id="page_name" name="page[name]">
  <option value="rails_base">Railsの基礎</option> 
  <option value="ruby_base">Rubyの基礎</option>
