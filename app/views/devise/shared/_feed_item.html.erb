@@ -3,7 +3,11 @@
     <span class="user">
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>
-    <span class="content"><%= feed_item.content %></span>
+    <span class="content">
+      <%= feed_item.content %>
+      <%= feed_item.theme %>
+      <%= feed_item.category %>
+      <%= feed_item.comment %></span>
 
     # 追加コード
 <% if feed_item.image? %>
