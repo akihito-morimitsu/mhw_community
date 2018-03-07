@@ -1,21 +1,19 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'devise/shared/error_messages', object: f.object %>
   <div class="form-group">
-   <label for="title">タイトル</label>
-   <input type="text" class="form-control" id="title">
+   <%= f.label :title, "タイトル" %>
+   <%= f.text_field :title,%>
   </div>
-
-<%= f.select :content, [["Railsの基礎", "rails_base"], ["Rubyの基礎", "ruby_base"]] %>
-
+   
   <div class="form-group">
-   <label for="category">カテゴリー</label>
-   <select class="form-control" id="category">
-    <option value="open">未選択</option> 
-    <option>募集</option>
-    <option>攻略</option>
-    <option>その他</option>
-   </select>
+   <%= f.label :comment, "本文" %>
+   <%= f.text_area :comment, placeholder: "コメントを書き込んでください" %>
   </div>
   
-  <%= f.submit "Post", class: "btn btn-lg btn-primary" %>
+  <div class="form-group">
+   <%= f.label :category, "カテゴリー" %>
+　 <%= f.select :category, [["募集", "募集"], ["攻略", "攻略"], ["その他", "その他"]] %>
+　</div>
+
+  <%= f.submit "投稿する", class: "btn btn-lg btn-primary" %>
 <% end %>
