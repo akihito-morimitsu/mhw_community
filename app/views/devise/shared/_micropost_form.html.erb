@@ -1,15 +1,15 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'devise/shared/error_messages', object: f.object %>
   <div class="form-group">
-   <label for="title">タイトル</label>
-   <input type="text" class="form-control" id="title">
+   <label for="content">タイトル</label>
+   <input type="text" class="form-control" id="content">
   </div>
 
 
 
   <div class="form-group">
    <label for="category">カテゴリー</label>
-   <select class="form-control" id="content">
+   <select class="form-control" id="category">
     <option value="open">未選択</option> 
     <option>募集</option>
     <option>攻略</option>
