@@ -21,7 +21,7 @@ class MicropostsController < ApplicationController
    private
 
     def micropost_params
-      params.require(:micropost).permit(:titile, :comment, :category)  # ここ
+      params.require(:micropost).permit(:theme, :comment, :category)  # ここ
     end
 
     def correct_user
