@@ -6,13 +6,14 @@
   </div>
    
   <div class="form-group">
-   <%= f.label :本文 %>
-   <%= f.text_area :comment, placeholder: "コメントを書き込んでください" %>
-  </div>
+  <label for="comment">ユーザー名:</label>
+  <input type="text" class="form-control" id="comment">
+</div>
+
   
   <div class="form-group">
    <%= f.label :カテゴリー %>
-　 <%= f.select :category, [["募集", "募集"], ["攻略", "攻略"], ["その他", "その他"]] %>
+　 <%= f.select :category, [["募集", "募集"], ["攻略", "攻略"], ["その他", "その他"]], {}, {class:"form-group"} %>
 　</div>
 
   <%= f.submit "投稿する", class: "btn btn-lg btn-primary" %>
