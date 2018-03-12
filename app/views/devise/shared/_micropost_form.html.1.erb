@@ -1,15 +1,19 @@
-<%= form_for(@micropost) do |f| %>
+<%= form_for(@micropost2) do |f| %>
   <%= render 'devise/shared/error_messages', object: f.object %>
   <div class="form-group">
    <%= f.label :サークル名 %>
-   <%= f.text_field :circle,%>
+   <%= f.text_field :circle%>
   </div>
 
   <div class="form-group">
    <%= f.label :本文 %>
-   <%= f.text_area :comment, placeholder: "コメントを書き込んでください" %>
+   <%= f.text_area :comment2, placeholder: "コメントを書き込んでください" %>
   </div>
   
+    <div class="form-group">
+   <%= f.label :活動時間帯 %>
+　 <%= f.select :timezone, [["未選択", "募集"], ["攻略", "攻略"], ["その他", "その他"]] %>
+　</div>
 
   <div class="form-group">
    <label for="timez">活動時間帯</label>
