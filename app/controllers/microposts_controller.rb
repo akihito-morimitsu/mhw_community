@@ -12,6 +12,13 @@ class MicropostsController < ApplicationController
       render 'static_pages/home'
     end
   end
+  
+  def show 
+    @micropost = Micropost.find(params[:id])
+    @comment = Comment.new
+    @user = User.find_by(id: @micropost.user_id)
+
+  end
 
   def destroy
     @micropost.destroy

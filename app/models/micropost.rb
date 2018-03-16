@@ -1,8 +1,7 @@
 class Micropost < ActiveRecord::Base
   belongs_to :user
   default_scope -> { order('created_at DESC') }
-  validates :comment, presence: true, length: { maximum: 140 }
-  validates :user_id, presence: true
+
   
   # ファイル用の属性を追加するhas_attached_fileメソッド
   has_attached_file :image, styles: { medium: "200x150>", thumb: "50x50>" }

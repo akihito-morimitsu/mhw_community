@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307084027) do
+ActiveRecord::Schema.define(version: 20180316131913) do
+
+  create_table "categories", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["micropost_id"], name: "index_comments_on_micropost_id"
+  add_index "comments", ["user_id", "micropost_id", "created_at"], name: "index_comments_on_user_id_and_micropost_id_and_created_at"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -21,6 +39,15 @@ ActiveRecord::Schema.define(version: 20180307084027) do
     t.datetime "updated_at"
     t.string   "age"
   end
+
+  create_table "micropost2s", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "micropost2s", ["user_id", "created_at"], name: "index_micropost2s_on_user_id_and_created_at"
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -34,9 +61,19 @@ ActiveRecord::Schema.define(version: 20180307084027) do
     t.string   "theme"
     t.text     "comment"
     t.string   "category"
+    t.string   "circle"
+    t.text     "comment2"
+    t.string   "timezone"
+    t.string   "receptionist"
   end
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+
+  create_table "receptionists", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
@@ -48,6 +85,12 @@ ActiveRecord::Schema.define(version: 20180307084027) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "timezones", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

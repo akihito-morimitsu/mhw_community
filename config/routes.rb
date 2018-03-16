@@ -11,7 +11,9 @@ SampleApp::Application.routes.draw do
     end
   end
   resources :contacts, only: [:new, :create]
-  resources :microposts,    only: [:create, :destroy]
+  resources :microposts , only: [:create , :destroy, :show] do
+    resources :comments, :only => [:index, :show, :new, :create]
+  end
   resources :relationships, only: [:create, :destroy]
 
   root  'static_pages#home'
