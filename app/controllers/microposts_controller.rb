@@ -17,7 +17,6 @@ class MicropostsController < ApplicationController
     @micropost = Micropost.find(params[:id])
     @comment = Comment.new
     @user = User.find_by(id: @micropost.user_id)
-
   end
 
   def destroy
