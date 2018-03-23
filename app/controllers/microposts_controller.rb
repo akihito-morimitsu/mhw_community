@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user,   only: :destroy
+  
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -15,19 +16,26 @@ class MicropostsController < ApplicationController
   
   def show 
     @micropost = Micropost.find(params[:id])
-    @comment = Comment.new
     @user = User.find_by(id: @micropost.user_id)
+    @comment = Comment.where(micropost_id: @micropost.id)
   end
 
   def destroy
     @micropost.destroy
     redirect_to root_url
   end
+  
+  def index
+    @captures = Micropost.where(:category => "攻略").first(5)
+    @members = Micropost.where(:category => "募集").first(5)
+    @others = Micropost.where(:category => "その他").first(5)
+  end
 
+  
    private
 
     def micropost_params
-      params.require(:micropost).permit(:theme, :comment, :category)  # ここ
+      params.require(:micropost).permit(:theme, :tweet, :category)
     end
 
     def correct_user

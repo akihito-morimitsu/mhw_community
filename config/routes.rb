@@ -11,8 +11,8 @@ SampleApp::Application.routes.draw do
     end
   end
   resources :contacts, only: [:new, :create]
-  resources :microposts , only: [:create , :destroy, :show] do
-    resources :comments, :only => [:index, :show, :new, :create]
+  resources :microposts , only: [:create , :destroy, :show, :index] do
+    resources :comments, :only => [:index, :show, :new, :create, :post]
   end
   resources :relationships, only: [:create, :destroy]
 

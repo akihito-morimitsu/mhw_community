@@ -1,0 +1,55 @@
+<div class="row">
+ <div class="bg-info">
+  <h1>最新情報</h1>
+  
+<p>
+<% @captures.each do |micropost|%>
+<%= gravatar_for(User.find(micropost.user_id)) %>
+<%= micropost.theme%>
+<%= micropost.tweet%>
+<%= micropost.category%>
+<%= link_to "More info", micropost_url(micropost.id)%>
+<% end%>
+</p>
+
+<p>
+<% @members.each do |micropost|%>
+<%= gravatar_for(User.find(micropost.user_id)) %>
+<%= micropost.theme%>
+<%= micropost.tweet%>
+<%= micropost.category%>
+<%= link_to "More info", micropost_url(micropost.id)%>
+<% end%>
+</p>
+
+<p>
+<% @others.each do |micropost|%>
+<%= gravatar_for(User.find(micropost.user_id)) %>
+<%= micropost.theme%>
+<%= micropost.tweet%>
+<%= micropost.category%>
+<%= link_to "More info", micropost_url(micropost.id)%>
+<% end%>
+</p>
+
+
+ </div>
+ <div class="col-xs-3 sample1">
+  <%= gravatar_for(User.find(Micropost.first.user_id)) %>
+  <h1><%= Micropost.first.theme %></h1>
+  <p><%= Micropost.first.tweet %></p>
+  
+   
+   
+    
+    
+  </div>
+ <div class="col-xs-3 sample1">
+    
+  </div>
+  <div class="col-xs-4">
+    
+  </div>
+</div>
+
+

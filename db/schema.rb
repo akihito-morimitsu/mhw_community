@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180317060931) do
+ActiveRecord::Schema.define(version: 20180318012909) do
 
   create_table "categories", force: true do |t|
     t.datetime "created_at"
@@ -40,15 +40,6 @@ ActiveRecord::Schema.define(version: 20180317060931) do
     t.string   "age"
   end
 
-  create_table "micropost2s", force: true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "micropost2s", ["user_id", "created_at"], name: "index_micropost2s_on_user_id_and_created_at"
-
   create_table "microposts", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
@@ -59,14 +50,16 @@ ActiveRecord::Schema.define(version: 20180317060931) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "theme"
-    t.text     "comment"
+    t.text     "tweet"
     t.string   "category"
     t.string   "circle"
     t.text     "comment2"
     t.string   "timezone"
     t.string   "receptionist"
+    t.integer  "micropost_id"
   end
 
+  add_index "microposts", ["micropost_id"], name: "index_microposts_on_micropost_id"
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
   create_table "receptionists", force: true do |t|
