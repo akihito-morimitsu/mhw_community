@@ -1,37 +1,23 @@
 <% if signed_in? %>
-  <div class="row">
-    <aside class="col-md-4">
       <section>
-        <%= render 'devise/shared/user_info' %>
+        <%= render 'layouts/contents' %>
       </section>
       <section>
-        <%= render 'devise/shared/stats' %>
+        <%= render 'microposts/microposts_all' %>
       </section>
-      <section>
-          <%= render 'devise/shared/micropost_form' %>
-      </section>
-    </aside>
-      <div class="col-md-8">
-      <h3>Micropost Feed</h3>
-      <%= render 'devise/shared/feed' %>
-    </div>
-  </div>
 <% else %>
-  <div class="center">
-    <%= image_tag 'home.png', :class =>'home_png'%>
-    
-    <h1>Welcome to the Sample App</h1>
-
-    <h2>
-    This is the home page for the
+      <section>
+        <%= render 'layouts/contents' %>
+      </section>
       
-    sample application.
-
-    <div class="center button">
+    <div class="center_button">
     <a href = "/users/auth/twitter" class="fl_tw2">
   <i class="fab fa-twitter"></i> <span> Twitterでログイン</span>
     </a>
     </div>
-  </div>
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+    <h3>ログインすると投稿やコメントができるようになります</h3>
+
+      <section>
+        <%= render 'microposts/microposts_all' %>
+      </section>
 <% end %>

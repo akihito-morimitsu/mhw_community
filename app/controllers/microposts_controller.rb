@@ -25,12 +25,6 @@ class MicropostsController < ApplicationController
     redirect_to root_url
   end
   
-  def index
-    @captures = Micropost.where(:category => "攻略").first(5)
-    @members = Micropost.where(:category => "募集").first(5)
-    @others = Micropost.where(:category => "その他").first(5)
-  end
-
   
    private
 
