@@ -1,35 +1,18 @@
-<div class="row">
+
  <div class="information">最新情報</div>
-  
-<p>
+ 
 <% @captures.each do |micropost|%>
-<%= gravatar_for(User.find(micropost.user_id)) %>
-<%= micropost.theme%>
-<%= micropost.tweet%>
+<div class="post_frame">
+<div class="post_theme"><%= micropost.theme%></div>
+<div class="image_circle"><%= gravatar_for(User.find(micropost.user_id)) %></div>
+<div class="post_tweet"><%= micropost.tweet%></div>
+</div>
 <%= micropost.category%>
 <%= link_to "More info", micropost_url(micropost.id)%>
 <% end%>
-</p>
+</div>
+</div>
 
-<p>
-<% @members.each do |micropost|%>
-<%= gravatar_for(User.find(micropost.user_id)) %>
-<%= micropost.theme%>
-<%= micropost.tweet%>
-<%= micropost.category%>
-<%= link_to "More info", micropost_url(micropost.id)%>
-<% end%>
-</p>
-
-<p>
-<% @others.each do |micropost|%>
-<%= gravatar_for(User.find(micropost.user_id)) %>
-<%= micropost.theme%>
-<%= micropost.tweet%>
-<%= micropost.category%>
-<%= link_to "More info", micropost_url(micropost.id)%>
-<% end%>
-</p>
 
 
  </div>

@@ -378,3 +378,36 @@ background-color: #FFFFFF;
 .background_body{
   background-color:#EEEEEE;
 }
+
+
+
+.post_frame {
+    display:table;
+    table-layout:fixed;
+    float:left;
+    width:250px;
+    margin: 2em 1em;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+.post_theme {
+    font-size: 1.2em;
+    background: #5fc2f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.post_tweet {
+    padding: 15px 20px;
+    margin: 0;
+}
+
+.image_circle {
+    width:  180px;       /* ※縦横を同値に */
+    height: 180px;       /* ※縦横を同値に */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    background-position: left top;  /* 横長画像の左上を基準に表示 */
+    display: inline-block;          /* 複数の画像を横に並べたい場合 */
+}
