@@ -4,17 +4,22 @@
     <script>$('.dropdown-toggle').dropdown()</script>
   <div class="container">
     <ul class="nav navbar-nav navbar-left">
-　　　<%= link_to image_tag("logo.png", alt: "MHWコミュニティ"), root_path %>
+　　　<%= link_to image_tag("logo.png", alt: "MHWコミュニティ"), root_path, class:"logo_png" %>
     </ul>
       <nav>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "ホーム",    root_path %></li>
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right i">
+          <% else %>
+        <ul class="nav navbar-nav navbar-right o">
+          <% end %>
+          
+          <li><a class="fas fa-home fa-2x" href="/"></a></li>
           
           <% if user_signed_in? %>
-            <li><%= link_to "ユーザー", users_url %></li>
+          <li><a class="fas fa-users fa-2x" href="/users"></a><li>
             <li id="fat-menu" class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                <%= gravatar_for(current_user) %> <b class="caret"></b>
+                <%= gravatar_for(current_user, "30x30") %> <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "プロフィール", current_user %></li>

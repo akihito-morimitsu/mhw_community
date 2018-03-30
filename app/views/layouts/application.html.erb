@@ -10,21 +10,20 @@
     <%= render 'layouts/shiv' %>
     <%= render 'layouts/header' %>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <div/>
+    </div>
   </head>
   <body class="background_body">
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert <%= bootstrap_class_for(key) %>"><%= value %></div>
       <% end %>
-      <%= yield %>
-      
+      <%= yield %> 
     </div>
   </body>
   <foot>
     <div class="container">
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
-    <div/>
+    </div>
   </foot>
 </html>

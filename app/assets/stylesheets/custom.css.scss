@@ -34,13 +34,22 @@ textarea {
 .center {
   text-align: center;
 }
+.container{
+  display: table;
+}
 
-/*下揃え*/
-.nav.navbar-nav.navbar-right {
-  position : absolute ;
-  bottom : -5px ;
-  right : 180px;
-  font-size: 20px;/*文字のサイズ*/
+/*header右*/
+.nav.navbar-nav.navbar-right.i {
+  position: absolute;
+  right: 190px;
+  bottom: -7px;
+  font-size: 18px;/*文字のサイズ*/
+}
+.nav.navbar-nav.navbar-right.o {
+  position: absolute;
+  right: 190px;
+  bottom: 2px;
+  font-size: 18px;/*文字のサイズ*/
 }
 
   h1 {
@@ -109,6 +118,10 @@ p {
   }
 }
 
+.logo_png{
+ width:500;
+ height:40;
+}
 /*home*/
 
 .home_png{
@@ -366,20 +379,36 @@ background-color: #FFFFFF;
 }
 
 .information {
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 1em;
-    margin-bottom: 10px;
-    padding-top: 23px;
-    font-size: 30px;
-    line-height: 40px;
+font-size:33px;
+text-align: center;
+font-weight: bold;
+letter-spacing: 40px;
+margin-bottom: 10px;
+color: #000000;
+text-align: center;
+margin-top: 50px;
+margin-bottom: 30px;
+margin-right: 400px;
+margin-left: 400px;
+padding: 0.4em;
+padding-left: 55px;
+border-top: solid 3px #FFA500	;
+border-bottom: solid 3px #FFA500	;
+background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+background: repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
 }
+
 
 .background_body{
   background-color:#EEEEEE;
 }
 
+.image_circle {
+border-radius: 400px;
+}
 
+.underline-none { text-decoration: none;}
+.underline-none:hover { text-decoration: none;}
 
 .post_frame {
     display:table;
@@ -387,27 +416,143 @@ background-color: #FFFFFF;
     float:left;
     width:250px;
     margin: 2em 1em;
-    background: #f1f1f1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    background: #FFFFFF;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.22);
 }
 .post_theme {
     font-size: 1.2em;
     background: #5fc2f5;
-    padding: 4px;
+    padding: 6px;
     text-align: center;
-    color: #FFF;
+    color: #FFFFFF;
     font-weight: bold;
     letter-spacing: 0.05em;
 }
+.post_icon{
+  float:left;
+  padding: 10px 10px;
+}
+.post_name{
+  color: #000000;/*文字色*/
+  padding: 25px;
+}
 .post_tweet {
-    padding: 15px 20px;
-    margin: 0;
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+    margin-left: 1em;
+    color: #000000;/*文字色*/
+    background: #FFFFFF;
+    border: solid 1px #CCCCCC;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    padding: 30px 20px;
+}
+.post_tweet p {
+    text-align: left;
+    vertical-align: top;
+}
+.post_time{
+  color: #000000;/*文字色*/
+  float:left;
+  padding-left: 1.5em;
+  padding-bottom: 0.5em;
+}
+.post_details{
+  text-align:right;
+  padding-right: 1.5em;
+  padding-bottom: 0.5em;
 }
 
-.image_circle {
-    width:  180px;       /* ※縦横を同値に */
-    height: 180px;       /* ※縦横を同値に */
-    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-    background-position: left top;  /* 横長画像の左上を基準に表示 */
-    display: inline-block;          /* 複数の画像を横に並べたい場合 */
+.details_theme{
+  font-size: 50px; /*文字大きさ*/
+  color: #000000; /*文字色*/
+  font-weight: bold; /*太字*/
+  line-height: 2em;  /*行間*/
+  letter-spacing: 0.5em; /*文字間*/
+  text-align: center;
 }
+.details_icon{
+  margin-left: 100px;
+  float:left;
+  border-radius: 400px;
+  height:80px;
+  width:80px;
+}
+.details_name{
+  font-weight: bold; /*太字*/
+  font-size: 28px; /*文字大きさ*/
+  line-height: 30px;  /*行間*/
+  padding-top: 30px;
+  margin-left: 220px;
+}
+.details_tweet {
+    font-size: 18px; /*文字大きさ*/
+    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    color: #000000;/*文字色*/
+    background: #FFFFFF;
+    border: solid 1px #CCCCCC;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    padding: 30px 20px;
+}
+.details_tweet p {
+    text-align: left;
+    vertical-align: top;
+}
+.details_time{
+  text-align:right;
+  font-size: 18px; /*文字大きさ*/
+  line-height: 20px;  /*行間*/
+  margin-right: 52px;
+  padding-bottom: 0.5em;
+}
+.details_line{
+  border-bottom: solid 2px #CCCCCC;/*線*/
+  margin-top: 30px;
+}
+
+.comment_infomation{
+  font-size: 20px;
+  font-weight: bold; /*太字*/
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.comment_icon{
+  margin-top: 20px;
+  margin-left: 40px;
+  float:left;
+  border-radius: 400px;
+  height:50px;
+  width:50px;
+}
+.comment_summary {
+    overflow: hidden;
+}
+.comment_name{
+  float:left;
+  font-weight: bold; /*太字*/
+  font-size: 15px; /*文字大きさ*/
+  line-height: 30px;  /*行間*/
+  margin-top: -3px;
+  margin-left: 15px;
+}
+.comment_time{
+  font-size: 15px; /*文字大きさ*/
+  line-height: 30px;  /*行間*/
+  margin-top: -3px;
+  margin-left: 85px;
+}
+.comment_body{
+  font-size: 15px; /*文字大きさ*/
+  line-height: 30px;  /*行間*/
+  margin-left: 15px;
+  margin-right: 50px;
+}
+
+.add_comment{
+　font-size: 1px; /*文字大きさ*/
+　margin: 5em;
+}
+
+

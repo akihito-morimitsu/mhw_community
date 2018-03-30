@@ -3,7 +3,7 @@ ruby '2.3.4'
 
 gem 'rake', '12.3.0'
 gem 'rails', '~>4.0.0'
-gem 'bootstrap-sass', '3.3.1'
+gem 'bootstrap-sass'
 gem 'devise','3.4.1'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'

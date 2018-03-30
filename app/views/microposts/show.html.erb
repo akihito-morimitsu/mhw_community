@@ -1,46 +1,34 @@
 <p id="notice"><%= notice %></p>
+<div class="details_theme"><%= @micropost.theme %></div>
 
-<p>
-    <%= image_tag @user.icon %>
-</p>
+ <%= image_tag @user.icon,:class => "details_icon"%>
 
-<p>
-  <strong>ユーザー:</strong>
-  <%= @user.name %>
-</p>
+    <div class="details_name"><%= @user.name %></div>
 
-<p>
-  <strong>タイトル:</strong>
-  <%= @micropost.theme %>
-</p>
+    <div class="details_tweet"><%= @micropost.tweet %></div>
 
-<p>
-  <strong>本文:</strong>
-  <%= @micropost.tweet %>
-</p>
+    <div class="details_time"><%= @micropost.created_at.to_datetime %></div>
 
-<p>
-  <strong>カテゴリー:</strong>
-  <%= @micropost.category %>
-</p>
+    <div class="details_line"></div>
 
-<p>
-  <% @comment.each do |comment| %>
-  　<p>
-     <%= image_tag User.find(comment.user_id).icon %>
-     <%= User.find(comment.user_id).name %>
-    </p>
-    <p>
-      <td><%= comment.body %></td>
-    </p>
+ <div class="comment_infomation">コメント（<%= @comment.count %>）</div>
+ <% @comment.each do |comment| %>
+    
+  　<%= image_tag User.find(comment.user_id).icon,:class => "comment_icon" %>
+  　
+  　<div class="comment_summary">
+     <div class="comment_name"><%= User.find(comment.user_id).name %></div>
+     
+     <div class="comment_time"><%= comment.created_at.to_datetime %></div>
+     
+     <div class="comment_body"><%= comment.body %></div>
+    </div>
   <% end %>
-</p>
 
-<h2>Add a comment:</h2>
-<%= form_for ([@micropost, @micropost.comments.build]) do |f| %>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+　<%= image_tag current_user.icon,:class => "comment_icon" %>
+  <%= form_for ([@micropost, @micropost.comments.build]) do |f| %>
+
+    <%= f.text_area :body, placeholder: "コメントを書き込んでください", :class => "add_comment"%>
     <%= f.hidden_field :micropost_id %>
   </p>
   <p>
