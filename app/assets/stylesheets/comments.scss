@@ -2,3 +2,62 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.comment_infomation{
+  font-size: 20px;
+  font-weight: bold; /*太字*/
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.comment_icon{
+  position: relative;
+  margin-top: 20px;
+  margin-left: 40px;
+  float:left;
+  border-radius: 400px;
+  height:50px;
+  width:50px;
+}
+.comment_summary {
+    overflow: hidden;
+}
+.comment_name{
+  float:left;
+  font-weight: bold; /*太字*/
+  font-size: 15px; /*文字大きさ*/
+  line-height: 30px;  /*行間*/
+  margin-top: -3px;
+  margin-left: 15px;
+}
+.comment_time{
+  font-size: 15px; /*文字大きさ*/
+  line-height: 30px;  /*行間*/
+  margin-top: -3px;
+}
+.comment_body{
+  font-size: 15px; /*文字大きさ*/
+  line-height: 30px;  /*行間*/
+  margin-left: 15px;
+  margin-right: 50px;
+}
+.comment_area{
+  position:relative;
+  margin-bottom: 70px;
+}
+.comment_write{
+  max-height: 50px;
+  display: inline;
+  position: absolute;
+  top: -15px;
+  left: 105px;
+  width: 1000px;
+　font-size: 1px; /*文字大きさ*/
+　resize: none;
+}
+.comment_submit{
+  display: block;
+  position: absolute;
+  right: 97px;
+  width: 170px;
+  top: 70px;
+　font-size: 1px; /*文字大きさ*/
+}
