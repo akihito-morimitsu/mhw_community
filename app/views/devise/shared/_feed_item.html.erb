@@ -6,7 +6,7 @@
     <span class="content">
       <%= feed_item.theme %>
       <%= feed_item.category %>
-      <%= feed_item.tweet %></span>
+      <%= simple_format(h feed_item.tweet) %></span>
 
     # 追加コード
 <% if feed_item.image? %>
