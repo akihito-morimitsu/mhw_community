@@ -2,6 +2,9 @@
       <section>
         <%= render 'layouts/contents' %>
       </section>
+      <div class="center_button">
+        <%= link_to "投稿する", post_path, class: 'btn btn-lg btn-primary'%>
+      </div>
       <section>
         <%= render 'microposts/microposts_timeline' %>
       </section>
