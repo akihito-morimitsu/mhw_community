@@ -25,15 +25,15 @@
     </div>
   <% end %>
 
-　<%= image_tag current_user.icon,:class => "comment_icon" %>
+　<% image_tag current_user.icon,:class => "comment_icon" %>
   <%= form_for ([@micropost, @micropost.comments.build]) do |f| %>
 
-  <p><div class="comment_area">
+  <div class="comment_area">
     <%= f.text_area :body, placeholder: "コメントを書き込んでください", :class => "add_comment"%>
     <%= f.hidden_field :micropost_id %>
-  </div></p>
+  </div>
   <p>
-    <%= f.submit "コメントする", class: 'btn btn-warning', :size => "30x10" %>
+    <%= f.submit "コメントする", class: 'btn btn-warning comment_submit' %>
   </p>
 <% end %>
 

@@ -45,18 +45,14 @@
 }
 .comment_write{
   max-height: 50px;
-  display: inline;
-  position: absolute;
+  display: block;
   top: -15px;
   left: 105px;
   width: 1000px;
 　font-size: 1px; /*文字大きさ*/
-　resize: none;
 }
 .comment_submit{
   display: block;
-  position: absolute;
-  right: 97px;
   width: 170px;
   top: 70px;
 　font-size: 1px; /*文字大きさ*/
