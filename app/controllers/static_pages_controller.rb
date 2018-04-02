@@ -23,5 +23,11 @@ class StaticPagesController < ApplicationController
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
   end
+  
+  def new
+          @captures = Micropost.where(:category => "攻略").all
+      @members = Micropost.where(:category => "募集").all
+      @others = Micropost.where(:category => "その他").all
+  end
 end
 
