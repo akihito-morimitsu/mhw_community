@@ -1,0 +1,6 @@
+<% if @microposts.any? %>
+  <ol class="microposts">
+    <%= render partial: 'devise/shared/feed_item', collection: @microposts %>
+  </ol>
+  <%= will_paginate @microposts, renderer: BootstrapPagination::Rails %>
+<% end %>

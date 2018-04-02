@@ -1,0 +1,44 @@
+<div class="row">
+<div class="information">攻略情報</div>
+<% @captures.each do |micropost|%>
+    <div class="post_frame"><%=link_to micropost_url(micropost.id), class:"underline-none" do %>
+    <div class="post_theme"><%= micropost.theme%></div>
+    <div class="post_icon image_circle"><%= gravatar_for(User.find(micropost.user_id)) %></div>
+    <div class="post_name"><%= micropost.user.name%></div>
+    <div class="post_tweet"><p><%= simple_format(h micropost.tweet.truncate(20))%></p></div>
+    <div class="post_time"><%= micropost.created_at.to_date%></div>
+    <div class="post_comment"><i class="fas fa-comment"></i><%= Comment.where(micropost_id: micropost.id).count %></div>
+    </div>
+<% end %>
+<% end %>
+</div>
+
+<div class="row">
+<div class="information">募集情報</div>
+<% @members.each do |micropost|%>
+<div class="post_frame"><%=link_to micropost_url(micropost.id), class:"underline-none" do %>
+<div class="post_theme"><%= micropost.theme%></div>
+<div class="post_icon"><%= gravatar_for(User.find(micropost.user_id)) %></div>
+<div class="post_name"><%= micropost.user.name%></div>
+<div class="post_tweet"><p><%= simple_format(h micropost.tweet.truncate(20))%></p></div>
+<div class="post_time"><%= micropost.created_at.to_date%></div>
+<div class="post_comment"><i class="fas fa-comment"></i><%= Comment.where(micropost_id: micropost.id).count %></div>
+</div>
+<% end %>
+<% end %>
+</div>
+
+<div class="row">
+<div class="information">その他</div>
+<% @others.each do |micropost|%>
+<div class="post_frame"><%=link_to micropost_url(micropost.id), class:"underline-none" do %>
+<div class="post_theme"><%= micropost.theme%></div>
+<div class="post_icon"><%= gravatar_for(User.find(micropost.user_id)) %></div>
+<div class="post_name"><%= micropost.user.name%></div>
+<div class="post_tweet"><p><%= simple_format(h micropost.tweet.truncate(20))%></p></div>
+<div class="post_time"><%= micropost.created_at.to_date%></div>
+<div class="post_comment"><i class="fas fa-comment"></i><%= Comment.where(micropost_id: micropost.id).count %></div>
+</div>
+<% end %>
+<% end %>
+</div>
