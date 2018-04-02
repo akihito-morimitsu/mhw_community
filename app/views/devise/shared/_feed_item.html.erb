@@ -6,7 +6,7 @@
     <span class="content">
       <p><%= "タイトル: #{feed_item.theme}" %></p>
       <p><%= "カテゴリ: #{feed_item.category}" %></p>
-      <p><%= simple_format(h feed_item.tweet) %></p>
+      <p><%= simple_format(h feed_item.tweet.truncate(20)) %></p>
     </span>
 
     <span class="timestamp">
