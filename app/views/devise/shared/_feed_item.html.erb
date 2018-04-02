@@ -4,16 +4,10 @@
      <%= link_to feed_item.user.name, feed_item.user %>
     </span>
     <span class="content">
-      <%= feed_item.theme %>
-      <%= feed_item.category %>
-      <%= simple_format(h feed_item.tweet) %></span>
-
-    # 追加コード
-<% if feed_item.image? %>
-  <div class="image">
-      <%= image_tag feed_item.image.url(:medium) %>
-    </div>
-<% end %>
+      <p><%= "タイトル: #{feed_item.theme}" %></p>
+      <p><%= "カテゴリ: #{feed_item.category}" %></p>
+      <p><%= simple_format(h feed_item.tweet) %></p>
+    </span>
 
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
