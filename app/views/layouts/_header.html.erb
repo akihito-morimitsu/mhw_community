@@ -9,13 +9,8 @@
       <nav>
         <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right i">
-          <% else %>
-        <ul class="nav navbar-nav navbar-right o">
-          <% end %>
-          
           <li><a class="fas fa-home fa-2x" href="/"></a></li>
-          
-          <% if user_signed_in? %>
+  
           <li><a class="fas fa-users fa-2x" href="/users"></a><li>
             <li id="fat-menu" class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">
@@ -27,7 +22,10 @@
                 <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %></li>
               </ul>
             </li>
+            </ul>
           <% else %>
+          <ul class="nav navbar-nav navbar-right o">
+            <li><a class="fas fa-home fa-2x" href="/"></a></li>
             <li><%= link_to " Twitterでログイン", user_omniauth_authorize_path(:twitter),{:class=>"fab fa-twitter"} %></li>
           <% end %>
         </ul>

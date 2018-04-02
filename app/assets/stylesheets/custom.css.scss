@@ -40,18 +40,17 @@ textarea {
 
 /*header右*/
 .nav.navbar-nav.navbar-right.i {
-  position: absolute;
-  right: 190px;
-  bottom: -7px;
+  
+  bottom: -20px;
   font-size: 18px;/*文字のサイズ*/
 }
 .nav.navbar-nav.navbar-right.o {
-  position: absolute;
-  right: 190px;
-  bottom: 2px;
+  margin-bottom:-100px;
   font-size: 18px;/*文字のサイズ*/
 }
-.dropd
+.dropdown-toggle{
+  
+}
   h1 {
     margin-bottom: 10px;
   }
