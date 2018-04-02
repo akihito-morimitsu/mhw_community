@@ -25,9 +25,9 @@ class StaticPagesController < ApplicationController
   end
   
   def new
-          @captures = Micropost.where(:category => "攻略").all
-      @members = Micropost.where(:category => "募集").all
-      @others = Micropost.where(:category => "その他").all
+    @captures = Micropost.where(:category => "攻略").all
+    @members = Micropost.where(:category => "募集").all
+    @others = Micropost.where(:category => "その他").all
   end
 end
 
