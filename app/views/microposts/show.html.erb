@@ -7,7 +7,7 @@
 
     <div class="details_tweet"><%= simple_format(h @micropost.tweet) %></div>
 
-    <div class="details_time"><%= @micropost.created_at.to_datetime %></div>
+    <div class="details_time"><%= @micropost.created_at.to_date %></div>
 
     <div class="details_line"></div>
 
@@ -19,7 +19,7 @@
   　<div class="comment_summary">
      <div class="comment_name"><%= User.find(comment.user_id).name %></div>
      
-     <div class="comment_time"><%= comment.created_at.to_datetime %></div>
+     <div class="comment_time"><%= comment.created_at.to_date %></div>
      
      <div class="comment_body"><%= simple_format(h comment.body) %></div>
     </div>
