@@ -1,9 +1,9 @@
 class StaticPagesController < ApplicationController
 
   def home
-      @captures = Micropost.where(:category => "攻略").first(5)
-      @members = Micropost.where(:category => "募集").first(5)
-      @others = Micropost.where(:category => "その他").first(5)
+      @captures = Micropost.where(:category => "攻略").first(4)
+      @members = Micropost.where(:category => "募集").first(4)
+      @others = Micropost.where(:category => "その他").first(4)
     if signed_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
@@ -25,9 +25,8 @@ class StaticPagesController < ApplicationController
   end
   
   def new
-    @captures = Micropost.where(:category => "攻略").all
-    @members = Micropost.where(:category => "募集").all
-    @others = Micropost.where(:category => "その他").all
+    @search = Micropost.search(params[:q])
+    @microposts = @search.result
   end
 end
 

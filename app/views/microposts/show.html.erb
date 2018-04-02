@@ -19,7 +19,7 @@
   　<div class="comment_summary">
      <div class="comment_name"><%= User.find(comment.user_id).name %></div>
      
-     <div class="comment_time"><%= comment.created_at.to_date %></div>
+     <div class="comment_time">&emsp&emsp&emsp<%= comment.created_at.to_date %></div>
      
      <div class="comment_body"><%= simple_format(h comment.body) %></div>
     </div>
